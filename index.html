@@ -50,7 +50,7 @@
             .all section { position: relative; z-index: 5;}
             
             /*-- cv_a -----*/
-            .cv_a { margin-bottom: 200px;}
+            .cv_a { padding-bottom: 120px; overflow: hidden;}
             .cv_a01 { position: absolute; top: 0; left: 50%; transform: translateX(-50%); display: flex; justify-content: center; align-items: flex-end; width: 100vw; pointer-events: none; z-index: 5;}
             .cv_a01::before, .cv_a01::after { content: ''; position: absolute; bottom: -80px; left: 50%; transform: translateX(-50%); width: 100%; aspect-ratio: 7 / 1;
                     background: url(img_about.png) center no-repeat; background-size: contain; z-index: 5;}
@@ -65,7 +65,7 @@
             }
 
             .cv_a02 { padding: 80px 5vw; position: relative; margin: auto; display: flex; align-items: stretch; justify-content: space-between; gap: 30%; overflow: hidden;}
-            .cv_a ul { padding: 60px 50px 120px; background: var(--SubColor_2); max-width: 100%; height: 520px; border-radius: 30px; transition: .3s ease-in-out;}
+            .cv_a ul { padding: 60px 50px 120px; background: var(--SubColor_2); max-width: 100%; width: 500px; height: 520px; border-radius: 30px; transition: .3s ease-in-out;}
             .cv_a ul:hover { box-shadow: 0 0 40px #E1AA2C44; transition: .3s ease-in-out;}
             .cv_a ul li { position: relative; font-size: 24px;}
             .cv_a ul h5 { position: relative; z-index: 5; font-size: 26px; padding: 7px 20px; background: var(--SubColor_1); border-radius: 10px; color: #FFFFFF;
@@ -86,7 +86,7 @@
             .cv_a ul li.cv_a_02 p + p { background: #C32800; width: 80%;}
             .cv_a ul li.cv_a_02 p i { color: #FFFFFF;}
 
-            .cv_a > i { position: absolute; top: -20%; left: 0; z-index: -1; overflow: hidden;}
+            .cv_a > i { position: absolute; top: -20%; left: 0; z-index: -1; overflow: hidden; width: 100%; height: 100%;}
             .cv_a > i img { animation: rotate 20s linear infinite;}
 
             @keyframes rotate {
@@ -95,7 +95,7 @@
             }
 
             /*-- cv_b -----*/
-            .cv_b { width: 90%; max-width: 1440px; margin: 120px auto 60px;}
+            .cv_b { width: 90%; max-width: 1440px; margin: 80px auto 60px;}
             .cv_b img { margin: 80px auto; display: block; animation: float .5s linear infinite alternate;}
 
             @keyframes float {
@@ -140,10 +140,11 @@
 
             /*-- RWD -----*/
             @media (max-width: 1440px) {
-                .cv_a { margin-bottom: 0;}
+                .cv_a { padding-bottom: 0;}
                 .cv_a01 { position: relative;}
                 .cv_a > i { top: 0;}
-                .cv_a02 { gap: 20px; margin-top: 60px; padding: 40px 0 0;}
+                .cv_a02 { max-width: 90%; gap: 20px; margin-top: 120px; padding: 40px 0 0; justify-content: center;}
+                .cv_a ul { padding: 60px 4%; height: auto; width: 92%;}
                 .cv_a ul:last-of-type { text-align: left;}
                 .cv_a ul:last-of-type h5, .cv_a ul li.cv_a_02 p { margin: 0 auto 20px 0;}
                 .cv_a ul li.cv_a_02 { max-width: 100%;}
@@ -153,11 +154,10 @@
                 .cv_b p { padding: 60px; background: #f9f9f9; border-radius: 30px;}
             }
             @media (max-width: 1024px) {
-                .cv_a ul { padding: 60px 50px; height: auto; width: 70%;}
                 .cv_a ul li br { display: none;}
-                .cv_a02 { flex-direction: column; align-items: center;}
                 .cv_a01::before, .cv_a01::after { aspect-ratio: 7 / 2;}
                 .cv_a01::after { max-width: 200px; bottom: -70px;}
+                .cv_a ul li.cv_a_01::after { top: 40px;}
 
                 .cv_b { width: 90%; margin: 20px auto 60px;}
 
@@ -166,18 +166,20 @@
 
                 .cv_d { grid-template-columns: repeat(auto-fit, minmax(min(300px,100%), 1fr)); gap: 2vw;}
             }
-            @media (max-width: 600px) {
+            @media (max-width: 768px) {
                 .cv_a01 p::before { top: 60px; left: 50px; width: 150px;}
+                .cv_a02 { display: block; margin-top: 80px;}
+                .cv_a ul:last-of-type { margin-top: 20px;}
+                .cv_a ul li.cv_a_01::after { height: 175px;}
 
-                .cv_b { width: 93%;}
-                .cv_b p { padding: 60px 40px;}
+                .cv_b { width: 90%;}
+                .cv_b p { padding: 60px 4%;}
 
                 .cv_e li img { width: 96%;}
             }
             @media (max-width: 425px) {
                 .cv_a01 p::before { top: 40px; width: 100px;}
                 .cv_a01::after { max-width: 160px; bottom: -80px;}
-                .cv_a ul li.cv_a_01::after { top: 40px;}
 
                 .cv_b img { margin: 80px auto 40px;}
 
@@ -186,8 +188,6 @@
                 .cv_d { margin: 40px auto;}
             }
             @media (max-width: 400px) {
-                .cv_b { width: 96%;}
-
                 .tab_button { max-width: 90%; justify-content: center;}
                 .tab_button button { padding: 10px 20px; font-size: 18px;}
             }
