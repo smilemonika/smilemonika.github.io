@@ -65,7 +65,7 @@
             }
 
             .cv_a02 { padding: 80px 5vw; position: relative; margin: auto; display: flex; align-items: stretch; justify-content: space-between; gap: 30%; overflow: hidden;}
-            .cv_a ul { padding: 60px 50px 120px; background: var(--SubColor_2); width: 100%; height: 520px; border-radius: 30px; transition: .3s ease-in-out;}
+            .cv_a ul { padding: 60px 50px 120px; background: var(--SubColor_2); max-width: 100%; height: 520px; border-radius: 30px; transition: .3s ease-in-out;}
             .cv_a ul:hover { box-shadow: 0 0 40px #E1AA2C44; transition: .3s ease-in-out;}
             .cv_a ul li { position: relative; font-size: 24px;}
             .cv_a ul h5 { position: relative; z-index: 5; font-size: 26px; padding: 7px 20px; background: var(--SubColor_1); border-radius: 10px; color: #FFFFFF;
@@ -86,8 +86,8 @@
             .cv_a ul li.cv_a_02 p + p { background: #C32800; width: 80%;}
             .cv_a ul li.cv_a_02 p i { color: #FFFFFF;}
 
-            .cv_a02 > i { position: absolute; top: -20%; left: 0; z-index: -1; overflow: hidden;}
-            .cv_a02 > i img { animation: rotate 20s linear infinite;}
+            .cv_a > i { position: absolute; top: -20%; left: 0; z-index: -1; overflow: hidden;}
+            .cv_a > i img { animation: rotate 20s linear infinite;}
 
             @keyframes rotate {
                   0% { transform: rotate(  0deg);}
@@ -95,7 +95,7 @@
             }
 
             /*-- cv_b -----*/
-            .cv_b { max-width: 1440px; margin: 120px auto 60px;}
+            .cv_b { width: 90%; max-width: 1440px; margin: 120px auto 60px;}
             .cv_b img { margin: 80px auto; display: block; animation: float .5s linear infinite alternate;}
 
             @keyframes float {
@@ -137,6 +137,41 @@
             .cv_e li { text-align: center;}
             .cv_e li::before { display: none;}
             .cv_e li img { border-radius: 10px; border: 10px solid var(--SubColor_2);}
+
+            /*-- RWD -----*/
+            @media (max-width: 1440px) {
+                .cv_a { margin-bottom: 0;}
+                .cv_a01 { position: relative;}
+                .cv_a > i { top: 0;}
+                .cv_a02 { gap: 20px; margin-top: 60px; padding: 40px 0 0;}
+                .cv_a ul:last-of-type { text-align: left;}
+                .cv_a ul:last-of-type h5, .cv_a ul li.cv_a_02 p { margin: 0 auto 20px 0;}
+                .cv_a ul li.cv_a_02 { max-width: 100%;}
+                .cv_a ul li.cv_a_02 p i { order: 2;}
+
+                .cv_b { margin: 60px auto;}
+                .cv_b p { padding: 60px; background: #f9f9f9; border-radius: 30px;}
+            }
+            @media (max-width: 1024px) {
+                .cv_a ul { padding: 60px 50px; height: auto; width: 70%;}
+                .cv_a ul li br { display: none;}
+                .cv_a02 { flex-direction: column; align-items: center;}
+                .cv_a01::before, .cv_a01::after { aspect-ratio: 7 / 2;}
+                .cv_a01::after { max-width: 200px; bottom: -70px;}
+
+                .cv_b { width: 90%; margin: 20px auto 60px;}
+
+                .cv_c h4 { line-height: 80%;}
+                .cv_c h5 { top: 0;}
+
+                .cv_d { grid-template-columns: repeat(auto-fit, minmax(min(300px,100%), 1fr)); gap: 2vw;}                
+            }
+            @media (max-width: 600px) {
+                .cv_a01 p::before { top: 60px; left: 50px; width: 150px;}
+
+                .cv_b { width: 92%;}
+                .cv_b p { padding: 60px 40px;}
+            }
         </style>
 
         <div class="all">
@@ -177,13 +212,13 @@
                             <p><i>熟練</i>CSS</i></p>
                             <p><i>精通</i>html</p>
                         </li>
-                    </ul>
-                    <i><img src="light.png" alt=""></i>
-                </div>                
+                    </ul>                    
+                </div>
+                <i><img src="light.png" alt=""></i>       
             </section><!--cv_a end-->
 
             <section class="cv_b">
-                <p class=".fade-in-down">
+                <p class="fade-in-down">
                     我喜歡生活中各種美的事物，除了繪畫與設計，也喜歡穿搭、看展，平時會留意生活中的視覺細節。國中開始接觸繪畫，之後就讀五專多媒體設計系，逐漸走上設計道路。<br><br>
                     工作探索過程中，我發現自己比起靜態設計，更喜歡具有互動性的事物，因此開始接觸網頁設計。工作期間學習 HTML、CSS，能獨立進行網頁設計與切版。面對 AI 快速發展，也會善用 AI 輔助工作，並依實際需求理解、修改與調整。<br><br>
                     期望未來能持續學習，結合設計與網頁能力，協助公司提升視覺呈現與使用體驗。
