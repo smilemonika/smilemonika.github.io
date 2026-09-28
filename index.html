@@ -1,31 +1,234 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monika｜個人作品集</title>
-</head>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>cv-202609</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Modak&family=Noto+Sans+TC:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>  
 
-<body>
+        <style>
+            :root {
+                --MainColor: #E1AA2C; /*網站主要色系*/
+                --SubColor_1: #003CA6; /*網站輔助色系 1*/
+                --SubColor_2: #F9F9F9; /*網站輔助色系 2*/
+                --f18: 18px;
+                --SFontE: "Modak", sans-serif; /*特殊字體 英文*/
+                --SFontC: "Noto Sans TC", "微軟正黑體", sans-serif; /*特殊字體 中文*/
+            }
+            /*反白顏色*/
+            ::-moz-selection{ background-color: var(--SubColor_1); color: #FFFFFF;}
+            ::selection{ background-color: var(--SubColor_1); color: #FFFFFF;}
+            .linkBox_Open + span i { transform: rotate(45deg);}
 
-    <h1>Monika</h1>
-    <h2>設計 × 網頁</h2>
+            /*滾輪*/
+            ::-webkit-scrollbar { width: 7px;}/*滾輪寬度*/
+            ::-webkit-scrollbar-button { background: transparent; border-radius: 4px; height: 0;}/*滾輪與視窗上下的間距*/
+            ::-webkit-scrollbar-track-piece { background: transparent;}/*滾輪軌道背景*/
+            ::-webkit-scrollbar-thumb { border-radius: 4px; background-color: var(--MainColor); border: none;}/*滾輪樣式*/
+            ::-webkit-scrollbar-track { box-shadow: transparent;}/*滾輪軌道樣式*/
 
-    <p>
-        歡迎來到我的個人作品集網站。
-    </p>
+            body { padding: 0; margin: 0;}
+            .all * { font-family: "Noto Sans TC", sans-serif; font-size: 18px; color: #000000; font-weight: normal; text-decoration: none; font-style: normal; line-height: 150%;
+                    letter-spacing: 0.05em; padding: 0; margin: 0; list-style: none; max-width: 100%;}
+            .all { background: #F7EEDF; overflow: hidden;}
+            .all section { position: relative; z-index: 5;}
+            
+            /*-- cv_a -----*/
+            .cv_a { margin-bottom: 200px;}
+            .cv_a01 { position: absolute; top: 0; left: 50%; transform: translateX(-50%); display: flex; justify-content: center; align-items: flex-end; width: 100vw; pointer-events: none; z-index: 5;}
+            .cv_a01::before, .cv_a01::after { content: ''; position: absolute; bottom: -80px; left: 50%; transform: translateX(-50%); width: 100%; aspect-ratio: 7 / 1;
+                    background: url(../html/img/img_about.png) center no-repeat; background-size: contain; z-index: 5;}
+            .cv_a01::after { background-image: url(../html/img/img_name.png); max-width: 400px; bottom: -100px; aspect-ratio: 4 / 1;}
+            .cv_a01 p { position: relative;}
+            .cv_a01 p::before { content: ''; position: absolute; top: 80px; left: 110px; width: 200px; aspect-ratio: 2 / 1; background: url(../html/img/img_me_02.png) no-repeat center; background-size: contain;
+                    animation: swing 1s ease-in-out alternate infinite;}
 
-    <h2>關於我</h2>
-    <p>
-        我喜歡一切美的事物，除了繪畫、設計外，
-        也對網頁設計與視覺呈現有興趣。
-    </p>
+            @keyframes swing {
+                  0% { transform: rotate(-10deg);}
+                100% { transform: rotate( 10deg);}
+            }
 
-    <h2>作品集</h2>
-    <p>這裡之後會放我的作品。</p>
+            .cv_a02 { padding: 80px 5vw; position: relative; margin: auto; display: flex; align-items: stretch; justify-content: space-between; gap: 30%; overflow: hidden;}
+            .cv_a ul { padding: 60px 50px 120px; background: var(--SubColor_2); width: 100%; height: 520px; border-radius: 30px;}
+            .cv_a ul li { position: relative; font-size: 24px;}
+            .cv_a ul h5 { position: relative; z-index: 5; font-size: 26px; padding: 7px 20px; background: var(--SubColor_1); border-radius: 10px; color: #FFFFFF;
+                    max-width: fit-content; letter-spacing: 0.3em; text-indent: 0.3em; margin-bottom: 20px;}
+            .cv_a ul li + li { margin-top: 60px;}
+            .cv_a ul li.cv_a_01::after { content: ''; position: absolute; top: 0; left: 22px; width: 1px; height: 211px; background: var(--SubColor_1);}
+            .cv_a ul li.cv_a_01 p { position: relative; padding-left: 40px; margin-left: 20px; margin-bottom: 40px; max-width: 252px; font-size: 24px;}
+            .cv_a ul li.cv_a_01 p::before { content: ''; position: absolute; top: 10px; left: -1px; width: 7px; aspect-ratio: 1 / 1; border-radius: 100%; background: var(--SubColor_1);}
+            .cv_a ul li.cv_a_01 p:last-of-type::before { width: 10px; border-radius: 3px; left: -3px;}
+            .cv_a ul p i { display: block; font-size: 16px;}
+            .cv_a ul p b { display: block; text-align: right; font-size: 16px;}
 
-    <h2>聯絡我</h2>
-    <p>Email：你的 Email</p>
+            .cv_a ul:last-of-type { text-align: right;}
+            .cv_a ul:last-of-type h5 { margin: 0 0 20px auto;}
+            .cv_a ul li.cv_a_02 { max-width: 400px; margin: 60px 0 0 auto;}
+            .cv_a ul li.cv_a_02 p { display: flex; justify-content: space-between; align-items: center; background: #2979FF; color: #FFFFFF; font-size: 24px;
+                    margin: 20px 0 0 auto; padding: 10px 20px; border-radius: 10px; width: 60%;}
+            .cv_a ul li.cv_a_02 p + p { background: #C32800; width: 80%;}
+            .cv_a ul li.cv_a_02 p i { color: #FFFFFF;}
 
-</body>
+            .cv_a02 > i { position: absolute; top: -20%; left: 0; z-index: -1; overflow: hidden;}
+            .cv_a02 > i img { animation: rotate 20s linear infinite;}
+
+            @keyframes rotate {
+                  0% { transform: rotate(  0deg);}
+                100% { transform: rotate(360deg);}
+            }
+
+            /*-- cv_b -----*/
+            .cv_b { max-width: 1440px; margin: 120px auto 60px;}
+            .cv_b img { margin: 80px auto; display: block;}
+
+            /*-- cv_c -----*/
+            .cv_c { text-align: center; margin: 0 auto 60px;}
+            .cv_c h4 { font-size: 100px; color: var(--MainColor); font-family: var(--SFontE); letter-spacing: 0;}
+            .cv_c h5 { position: relative; top: -30px; letter-spacing: 0.2em; text-indent: 0.2em; font-size: 24px; font-weight: 600;}
+            .cv_c p { margin-top: 40px;}
+            .cv_c a { display: inline-flex; align-items: center; justify-content: center; padding: 10px; background: var(--SubColor_1); border-radius: 100%; aspect-ratio: 1 / 1;
+                    width: 50px; transition: .3s ease-in-out;}
+            .cv_c a + a { margin-left: 20px;}
+            .cv_c a:hover { background: #c75306; transform: rotate(15deg); transition: .3s ease-in-out;}
+            .cv_c a.line:hover { background: #06C755;}
+            .cv_c a.mail:hover { background: #c72306;}
+
+            /*tab_button*/
+            .tab_button { display: flex; gap: 20px; max-width: fit-content; margin: auto;}
+            .tab_button button { padding: 10px 30px; color: #FFFFFF; font-size: 24px; background: var(--SubColor_1); border-radius: 10px; border: none; transition: .3s ease-in-out;}
+            .tab_button button:hover { background: #B9010E; transition: .3s ease-in-out;}
+            .tab_button button.active { background: var(--MainColor);}
+
+            /*-- cv_d -----*/
+            .tabcontent { width: 90%; max-width: 1800px; margin: auto;}
+            .cv_d { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; margin: 80px auto;}
+            .cv_d li { position: relative; transition: .3s ease-in-out;}
+            .cv_d:hover li { filter: grayscale(0.8); transition: .3s ease-in-out;}
+            .cv_d:hover li:hover { filter: grayscale(0); transition: .3s ease-in-out;}
+            .cv_d li::before { content: ''; position: absolute; bottom: -35px; left: 50%; transform: translateX(-50%) rotate(-90deg); width: 60px; aspect-ratio: 1 / 1; pointer-events: none; opacity: 0;
+                        background: url(../html/img/img_arrow.png) center no-repeat, #F7EEDF; background-size: contain; border: 6px solid #F7EEDF; border-radius: 100%; transition: .3s ease-in-out;}
+            .cv_d li:hover::before { opacity: 1; transition: .3s ease-in-out;}
+            .cv_d li a { display: block; max-height: 700px; overflow-y: scroll; border-radius: 10px; border: 10px solid var(--SubColor_2);}
+
+            /*-- cv_e -----*/
+            .cv_e { max-width: 1300px; grid-template-columns: repeat(2,1fr);}
+            .cv_e li { text-align: center;}
+            .cv_e li::before { display: none;}
+            .cv_e li img { border-radius: 10px; border: 10px solid var(--SubColor_2);}
+        </style>
+
+        <div class="all">
+            <section class="cv_a">
+                <div class="cv_a01">
+                    <p><img src="../html/img/img_me.png" alt=""></p>
+                </div>
+                <div class="cv_a02">
+                    <ul>
+                        <li>
+                            <h5>學歷</h5>
+                            台中科技大學 商業設計系
+                        </li>
+                        <li class="cv_a_01">
+                            <h5>經歷</h5>
+                            <p>
+                                <i>2016 - 2017</i>
+                                立麒數位文創有限公司
+                                <b>在學實習1年</b>
+                            </p>
+                            <p>
+                                <i>2021-2026</i>
+                                揚京快客網路科技公司
+                                <b>在職5年至今</b>
+                            </p>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li>
+                            <h5>專長</h5>
+                            平面設計｜網頁設計｜RWD切版｜<br>攝影｜繪畫｜
+                        </li>
+                        <li class="cv_a_02">
+                            <h5>擅長</h5>
+                            <img src="../html/img/img_ai.png" alt="">
+                            <img src="../html/img/img_ps.png" alt="">
+                            <img src="../html/img/img_vs.png" alt="">
+                            <p><i>熟練</i>CSS</i></p>
+                            <p><i>精通</i>html</p>
+                        </li>
+                    </ul>
+                    <i><img src="../html/img/light.png" alt=""></i>
+                </div>                
+            </section><!--cv_a end-->
+
+            <section class="cv_b">
+                <p>
+                    我喜歡生活中各種美的事物，除了繪畫與設計，也喜歡穿搭、看展，平時會留意生活中的視覺細節。國中開始接觸繪畫，之後就讀五專多媒體設計系，逐漸走上設計道路。<br><br>
+                    工作探索過程中，我發現自己比起靜態設計，更喜歡具有互動性的事物，因此開始接觸網頁設計。工作期間學習 HTML、CSS，能獨立進行網頁設計與切版。面對 AI 快速發展，也會善用 AI 輔助工作，並依實際需求理解、修改與調整。<br><br>
+                    期望未來能持續學習，結合設計與網頁能力，協助公司提升視覺呈現與使用體驗。
+                </p>
+                <img src="../html/img/img_arrow.png" alt="">
+            </section><!--cv_b end-->
+
+            <section class="cv_c">
+                <h4>Design Works</h4>
+                <h5>設計作品</h5>
+            </section><!--cv_c end-->
+
+            <div class="tab_button">
+               <button class="tablinks active" id="First_Open" onclick="openClass(event, 'wdTab01')">網頁設計</button>
+               <button class="tablinks" onclick="openClass(event, 'wdTab02')">平面設計</button>
+            </div>
+
+            <section class="tabcontent" id="wdTab01">
+                <ul class="cv_d">
+                    <li><a href="https://www.route99hakone.com/" target="_blank"><img src="../html/img/web_04.png"></a></li>
+                    <li><a href="http://www.1314mm941.com.tw/" target="_blank"><img src="../html/img/web_02.png"></a></li>
+                    <li><a href="https://www.benmu-interior.com/" target="_blank"><img src="../html/img/web_06.png"></a></li>
+                    <li><a href="http://www.myhome250716.com/" target="_blank"><img src="../html/img/web_03.png"></a></li>
+                    <li><a href="https://www.zunchingdg.com/" target="_blank"><img src="../html/img/web_01.png"></a></li>
+                    <li><a href="https://www.wanledon.com/" target="_blank"><img src="../html/img/web_05.png"></a></li>
+                    <li><a href="https://www.roastercofe.com/" target="_blank"><img src="../html/img/web_07.png"></a></li>
+                    <li><a href="https://www.petsciencelab.com/" target="_blank"><img src="../html/img/web_08.png"></a></li>
+                    <li><a href="https://www.88tofushop.com/" target="_blank"><img src="../html/img/web_09.png"></a></li>
+                    <li><a href="https://www.wetalkst.com/" target="_blank"><img src="../html/img/web_10.png"></a></li>
+                    <li><a href="https://www.neateeth.com.tw/" target="_blank"><img src="../html/img/web_11.png"></a></li>
+                    <li><a href="https://www.chennails-beauty.com/" target="_blank"><img src="../html/img/web_12.png"></a></li>
+                </ul>
+            </section><!--wdTab01 end-->
+
+            <section class="tabcontent" id="wdTab02">
+                <ul class="cv_d cv_e">
+                    <li><img src="../html/img/dm_01.jpg"></li>
+                    <li><img src="../html/img/dm_02.jpg"></li>
+                    <li><img src="../html/img/dm_03.jpg"></li>
+                    <li><img src="../html/img/dm_06.jpg"></li>
+                    <li><img src="../html/img/dm_04.jpg"></li>
+                    <li><img src="../html/img/dm_05.webp"></li>                    
+                </ul>
+            </section><!--wdTab02 end-->
+
+            <section class="cv_c">
+                <h4>Contact Me</h4>
+                <h5>聯絡我</h5>
+                <p>
+                    <a class="tel" href="tel:0959038883"><img src="../html/img/icon_tel.png"></a>
+                    <a class="line" href=""><img src="../html/img/icon_line.png"></a>
+                    <a class="mail" href="mailto:oao.monika@gmail.com"><img src="../html/img/icon_mail.png"></a>
+                </p>
+            </section><!--cv_c end-->
+
+        </div>
+
+        <!--tab 切換-->
+        <script type="text/jscript">
+        	function openClass(evt, cityName) { var i, tabcontent, tablinks; tabcontent = document.getElementsByClassName("tabcontent"); for (i = 0; i < tabcontent.length; i++) {	tabcontent[i].style.display = "none"; }
+        	tablinks = document.getElementsByClassName("tablinks"); for (i = 0; i < tablinks.length; i++) { tablinks[i].className = tablinks[i].className.replace(" active", ""); }
+        	document.getElementById(cityName).style.display = "block"; 	evt.currentTarget.className += " active"; }
+        	document.getElementById("First_Open").click();
+        </script>
+    </body>    
 </html>
